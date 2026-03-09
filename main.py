@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get("/")
 def index():
-    return FileResponse("lacucina_with_chatbot.html")
+    return FileResponse("index.html")
 
 
 # =============================================
