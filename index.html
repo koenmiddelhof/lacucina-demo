@@ -603,14 +603,21 @@
             .testimonials-section { padding: 60px 20px; }
 
             #chat-window {
-                width: 100vw;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                height: 85vh;
-                border-radius: 20px 20px 0 0;
-                position: fixed;
-            }
+            width: 100vw;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 60vh;
+            max-height: 60vh;
+            border-radius: 20px 20px 0 0;
+            position: fixed;
+        }
+        
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+        }
 
             #chat-launcher { bottom: 16px; right: 16px; }
 
