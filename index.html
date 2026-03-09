@@ -612,17 +612,22 @@
             border-radius: 20px 20px 0 0;
             position: fixed;
         }
-        
+
         #chat-messages {
             flex: 1;
             overflow-y: auto;
             min-height: 0;
         }
 
-            #chat-launcher { bottom: 16px; right: 16px; }
+            #chat-launcher { bottom: 20px; right: 20px; z-index: 99999}
 
             #chat-input {
                 font-size: 16px; /* voorkomt inzoomen op iOS */
+            }
+
+            #chat-input-area {
+            position: relative;
+            z-index: 100000;
             }
         }
     </style>
