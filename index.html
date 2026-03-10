@@ -603,31 +603,29 @@
             .testimonials-section { padding: 60px 20px; }
 
             #chat-window {
-            width: 100vw;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            height: 60vh;
-            max-height: 60vh;
-            border-radius: 20px 20px 0 0;
-            position: fixed;
-        }
-
-        #chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            min-height: 0;
-        }
-
-            #chat-launcher { bottom: 20px; right: 20px; z-index: 99999}
-
-            #chat-input {
-                font-size: 16px; /* voorkomt inzoomen op iOS */
+                width: 100vw;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                height: 70vh;
+                max-height: 70vh;
+                border-radius: 20px 20px 0 0;
+                position: fixed;
             }
 
-            #chat-input-area {
-            position: relative;
-            z-index: 100000;
+            #chat-messages {
+                flex: 1;
+                overflow-y: auto;
+                min-height: 0;
+            }
+
+            #chat-launcher { 
+                bottom: 16px; 
+                right: 16px; 
+            }
+
+            #chat-input {
+                font-size: 16px;
             }
         }
     </style>
@@ -830,10 +828,15 @@
     let greeted = false;
 
     // Toggle chat open/close
-    toggleBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
-        chatWindow.classList.toggle('visible', isOpen);
-        toggleBtn.classList.toggle('open', isOpen);
+        toggleBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            chatWindow.classList.toggle('visible', isOpen);
+            toggleBtn.classList.toggle('open', isOpen);
+
+    // Verberg toggle knop op mobiel wanneer chat open is
+    if (window.innerWidth <= 768) {
+        toggleBtn.style.display = isOpen ? 'none' : 'flex';
+    }   
 
         if (isOpen && !greeted) {
             greeted = true;
