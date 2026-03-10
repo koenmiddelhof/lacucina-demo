@@ -348,6 +348,10 @@
             position: relative;
         }
 
+        #chat-close-btn {
+            display: none;
+        }
+
         #chat-toggle-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 32px rgba(192, 98, 47, 0.55);
@@ -627,6 +631,9 @@
             #chat-input {
                 font-size: 16px;
             }
+            #chat-close-btn {
+                display: block;   /* ← hier toevoegen, als laatste regel voor de sluit } */
+            }
         }
     </style>
 </head>
@@ -781,13 +788,14 @@
 </div>
 
 <div id="chat-window">
-    <div id="chat-header">
-        <div class="chat-avatar">🍽️</div>
-        <div class="chat-header-info">
-            <div class="chat-header-name">La Cucina Assistent</div>
-            <div class="chat-header-status">Online – direct antwoord</div>
+        <div id="chat-header">
+            <div class="chat-avatar">🍽️</div>
+            <div class="chat-header-info">
+                <div class="chat-header-name">La Cucina Assistent</div>
+                <div class="chat-header-status">Online – direct antwoord</div>
+            </div>
+            <button id="chat-close-btn" style="background:none; border:none; color:white; font-size:22px; cursor:pointer; padding: 0 4px; line-height:1;">✕</button>
         </div>
-    </div>
 
     <div id="chat-messages">
         <!-- Welcome message injected via JS -->
@@ -828,23 +836,31 @@
     let greeted = false;
 
     // Toggle chat open/close
+ // Toggle chat open/close
         toggleBtn.addEventListener('click', () => {
             isOpen = !isOpen;
             chatWindow.classList.toggle('visible', isOpen);
             toggleBtn.classList.toggle('open', isOpen);
 
-    // Verberg toggle knop op mobiel wanneer chat open is
-    if (window.innerWidth <= 768) {
-        toggleBtn.style.display = isOpen ? 'none' : 'flex';
-    }   
+            if (window.innerWidth <= 768) {
+                toggleBtn.style.display = isOpen ? 'none' : 'flex';
+            }
 
-        if (isOpen && !greeted) {
-            greeted = true;
-            addBotMessage("Goedendag! 👋 Welkom bij La Cucina Oisterwijk. Ik ben uw digitale assistent. Kan ik u helpen met vragen over ons assortiment, openingstijden of reserveringen?");
-        }
+            if (isOpen && !greeted) {
+                greeted = true;
+                addBotMessage("Goedendag! 👋 Welkom bij La Cucina Oisterwijk. Ik ben uw digitale assistent. Kan ik u helpen met vragen over ons assortiment, openingstijden of reserveringen?");
+            }
 
-        if (isOpen) chatInput.focus();
-    });
+            if (isOpen) chatInput.focus();
+        });
+
+        // Sluit knop in header (mobiel)
+        document.getElementById('chat-close-btn').addEventListener('click', () => {
+            isOpen = false;
+            chatWindow.classList.remove('visible');
+            toggleBtn.classList.remove('open');
+            toggleBtn.style.display = 'flex';
+        });
 
     // Add bot message bubble
     function addBotMessage(text) {
