@@ -47,11 +47,6 @@
             border-bottom: 1px solid rgba(184, 151, 58, 0.3);
         }
 
-        .nav-logo img {
-            height: 48px;
-            filter: brightness(0) invert(1);
-        }
-
         .nav-logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
@@ -165,7 +160,6 @@
             margin-bottom: 24px;
         }
 
-        /* About section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -187,7 +181,6 @@
 
         .about-image img { width: 100%; display: block; }
 
-        /* Opening hours */
         .hours-card {
             background: var(--dark-brown);
             color: var(--cream);
@@ -214,7 +207,6 @@
         .hours-row .day { color: #d4b896; }
         .hours-row .time { color: white; font-weight: 700; }
 
-        /* Features / offerings */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -230,7 +222,6 @@
         }
 
         .feature-card:hover { background: var(--mid-brown); }
-
         .feature-card .icon { font-size: 40px; margin-bottom: 16px; }
 
         .feature-card h3 {
@@ -246,18 +237,13 @@
             line-height: 1.6;
         }
 
-        /* Testimonials */
         .testimonials-section {
             background: var(--dark-brown);
             max-width: 100%;
             padding: 100px 48px;
         }
 
-        .testimonials-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .testimonials-inner { max-width: 1200px; margin: 0 auto; }
         .testimonials-section .section-label { color: var(--gold); }
         .testimonials-section h2 { color: #e8d5a3; }
 
@@ -292,7 +278,6 @@
             font-weight: 700;
         }
 
-        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -300,18 +285,9 @@
             align-items: start;
         }
 
-        .contact-info p {
-            font-size: 15px;
-            color: var(--mid-brown);
-            margin-bottom: 8px;
-        }
+        .contact-info p { font-size: 15px; color: var(--mid-brown); margin-bottom: 8px; }
+        .contact-info a { color: var(--terracotta); text-decoration: none; }
 
-        .contact-info a {
-            color: var(--terracotta);
-            text-decoration: none;
-        }
-
-        /* Footer */
         footer {
             background: var(--warm-dark);
             color: #6b5540;
@@ -348,9 +324,7 @@
             position: relative;
         }
 
-        #chat-close-btn {
-            display: none;
-        }
+        #chat-close-btn { display: none; }
 
         #chat-toggle-btn:hover {
             transform: translateY(-3px);
@@ -359,11 +333,9 @@
 
         #chat-toggle-btn svg { width: 26px; height: 26px; fill: white; transition: opacity 0.2s; }
         #chat-toggle-btn .icon-close { display: none; }
-
         #chat-toggle-btn.open .icon-chat { display: none; }
         #chat-toggle-btn.open .icon-close { display: block; }
 
-        /* Notification dot */
         #chat-toggle-btn::after {
             content: '';
             position: absolute;
@@ -382,13 +354,12 @@
             50% { transform: scale(1.2); opacity: 0.8; }
         }
 
-        /* Chat window */
         #chat-window {
             position: fixed;
             bottom: 104px;
             right: 28px;
             width: 360px;
-            height: 520px;
+            height: 540px;
             background: white;
             border-radius: 16px;
             box-shadow: 0 24px 64px rgba(0,0,0,0.25);
@@ -408,7 +379,6 @@
             pointer-events: all;
         }
 
-        /* Chat header */
         #chat-header {
             background: linear-gradient(135deg, var(--dark-brown), var(--mid-brown));
             padding: 16px 20px;
@@ -454,7 +424,6 @@
             display: inline-block;
         }
 
-        /* Messages area */
         #chat-messages {
             flex: 1;
             overflow-y: auto;
@@ -512,7 +481,55 @@
             border-radius: 16px 16px 4px 16px;
         }
 
-        /* Typing indicator */
+        /* ========================
+           Quick-reply chips
+        ======================== */
+        #quick-chips {
+            padding: 8px 16px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: #faf7f3;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1.5px solid var(--terracotta);
+            background: white;
+            color: var(--terracotta);
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s, transform 0.15s;
+            white-space: nowrap;
+        }
+
+        .chip:hover {
+            background: var(--terracotta);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .chip.anders {
+            border-color: var(--light-brown);
+            color: var(--light-brown);
+        }
+
+        .chip.anders:hover {
+            background: var(--light-brown);
+            color: white;
+        }
+
+        /* ========================
+           Typing indicator
+        ======================== */
         .typing-indicator {
             display: flex;
             align-items: center;
@@ -541,7 +558,9 @@
             30% { transform: translateY(-5px); opacity: 1; }
         }
 
-        /* Input area */
+        /* ========================
+           Input area
+        ======================== */
         #chat-input-area {
             padding: 12px 16px;
             border-top: 1px solid #ede8e0;
@@ -549,6 +568,11 @@
             gap: 8px;
             align-items: center;
             background: white;
+        }
+
+        /* Hidden by default — shown after "Anders" or after first chip pick */
+        #chat-input-area.hidden {
+            display: none;
         }
 
         #chat-input {
@@ -582,7 +606,6 @@
         #chat-send:hover { background: #a8451f; transform: scale(1.05); }
         #chat-send svg { width: 18px; height: 18px; fill: white; }
 
-        /* Chat branding footer */
         #chat-brand {
             text-align: center;
             padding: 8px;
@@ -608,32 +631,17 @@
 
             #chat-window {
                 width: 100vw;
-                right: 0;
-                left: 0;
-                bottom: 0;
+                right: 0; left: 0; bottom: 0;
                 height: 70vh;
                 max-height: 70vh;
                 border-radius: 20px 20px 0 0;
                 position: fixed;
             }
 
-            #chat-messages {
-                flex: 1;
-                overflow-y: auto;
-                min-height: 0;
-            }
-
-            #chat-launcher { 
-                bottom: 16px; 
-                right: 16px; 
-            }
-
-            #chat-input {
-                font-size: 16px;
-            }
-            #chat-close-btn {
-                display: block;   /* ← hier toevoegen, als laatste regel voor de sluit } */
-            }
+            #chat-messages { flex: 1; overflow-y: auto; min-height: 0; }
+            #chat-launcher { bottom: 16px; right: 16px; }
+            #chat-input { font-size: 16px; }
+            #chat-close-btn { display: block; }
         }
     </style>
 </head>
@@ -776,32 +784,34 @@
 ======================== -->
 <div id="chat-launcher">
     <button id="chat-toggle-btn" title="Chat met ons">
-        <!-- Chat icon -->
-        <svg class="icon-chat" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-        </svg>
-        <!-- Close icon -->
-        <svg class="icon-close" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
-        </svg>
+        <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
     </button>
 </div>
 
 <div id="chat-window">
-        <div id="chat-header">
-            <div class="chat-avatar">🍽️</div>
-            <div class="chat-header-info">
-                <div class="chat-header-name">La Cucina Assistent</div>
-                <div class="chat-header-status">Online – direct antwoord</div>
-            </div>
-            <button id="chat-close-btn" style="background:none; border:none; color:white; font-size:22px; cursor:pointer; padding: 0 4px; line-height:1;">✕</button>
+    <div id="chat-header">
+        <div class="chat-avatar">🍽️</div>
+        <div class="chat-header-info">
+            <div class="chat-header-name">La Cucina Assistent</div>
+            <div class="chat-header-status">Online – direct antwoord</div>
         </div>
-
-    <div id="chat-messages">
-        <!-- Welcome message injected via JS -->
+        <button id="chat-close-btn" style="background:none; border:none; color:white; font-size:22px; cursor:pointer; padding: 0 4px; line-height:1;">✕</button>
     </div>
 
-    <div id="chat-input-area">
+    <div id="chat-messages"></div>
+
+    <!-- Quick-reply chips -->
+    <div id="quick-chips">
+        <button class="chip" data-topic="Wat is jullie assortiment?">🥩 Assortiment</button>
+        <button class="chip" data-topic="Wat zijn de openingstijden?">🕐 Openingstijden</button>
+        <button class="chip" data-topic="Kunnen jullie buffetten of catering verzorgen?">🍽️ Buffetten & Catering</button>
+        <button class="chip" data-topic="Wat is het adres en hoe kan ik contact opnemen?">📍 Locatie & Contact</button>
+        <button class="chip" data-topic="Kan ik iets vooraf bestellen?">🛒 Bestellen</button>
+        <button class="chip anders" data-topic="anders">✏️ Anders</button>
+    </div>
+
+    <div id="chat-input-area" class="hidden">
         <input type="text" id="chat-input" placeholder="Stel uw vraag...">
         <button id="chat-send">
             <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -815,17 +825,15 @@
 
 
 <script>
-    // ========================
-    // Chatbot — AI-Migo Widget
-    // ========================
-
-    const toggleBtn = document.getElementById('chat-toggle-btn');
-    const chatWindow = document.getElementById('chat-window');
+    const toggleBtn    = document.getElementById('chat-toggle-btn');
+    const chatWindow   = document.getElementById('chat-window');
     const chatMessages = document.getElementById('chat-messages');
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
+    const chatInput    = document.getElementById('chat-input');
+    const chatSend     = document.getElementById('chat-send');
+    const quickChips   = document.getElementById('quick-chips');
+    const inputArea    = document.getElementById('chat-input-area');
 
-    // Session ID (persists per browser)
+    // Session ID
     let sessionId = localStorage.getItem('aimigo_session');
     if (!sessionId) {
         sessionId = crypto.randomUUID();
@@ -835,34 +843,52 @@
     let isOpen = false;
     let greeted = false;
 
-    // Toggle chat open/close
- // Toggle chat open/close
-        toggleBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            chatWindow.classList.toggle('visible', isOpen);
-            toggleBtn.classList.toggle('open', isOpen);
+    // ── Open / close ──────────────────────────────
+    toggleBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        chatWindow.classList.toggle('visible', isOpen);
+        toggleBtn.classList.toggle('open', isOpen);
 
-            if (window.innerWidth <= 768) {
-                toggleBtn.style.display = isOpen ? 'none' : 'flex';
+        if (window.innerWidth <= 768) {
+            toggleBtn.style.display = isOpen ? 'none' : 'flex';
+        }
+
+        if (isOpen && !greeted) {
+            greeted = true;
+            addBotMessage("Goedendag! 👋 Welkom bij La Cucina Oisterwijk. Waarmee kan ik u helpen?");
+        }
+
+        if (isOpen) chatInput.focus();
+    });
+
+    document.getElementById('chat-close-btn').addEventListener('click', () => {
+        isOpen = false;
+        chatWindow.classList.remove('visible');
+        toggleBtn.classList.remove('open');
+        toggleBtn.style.display = 'flex';
+    });
+
+    // ── Chip clicks ───────────────────────────────
+    quickChips.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            const topic = chip.dataset.topic;
+
+            if (topic === 'anders') {
+                // Reveal input, hide chips
+                quickChips.style.display = 'none';
+                inputArea.classList.remove('hidden');
+                chatInput.focus();
+                return;
             }
 
-            if (isOpen && !greeted) {
-                greeted = true;
-                addBotMessage("Goedendag! 👋 Welkom bij La Cucina Oisterwijk. Ik ben uw digitale assistent. Kan ik u helpen met vragen over ons assortiment, openingstijden of reserveringen?");
-            }
-
-            if (isOpen) chatInput.focus();
+            // Send chip topic as user message
+            quickChips.style.display = 'none';
+            inputArea.classList.remove('hidden');
+            sendMessage(topic);
         });
+    });
 
-        // Sluit knop in header (mobiel)
-        document.getElementById('chat-close-btn').addEventListener('click', () => {
-            isOpen = false;
-            chatWindow.classList.remove('visible');
-            toggleBtn.classList.remove('open');
-            toggleBtn.style.display = 'flex';
-        });
-
-    // Add bot message bubble
+    // ── Message helpers ───────────────────────────
     function addBotMessage(text) {
         const row = document.createElement('div');
         row.className = 'msg-row bot';
@@ -881,7 +907,6 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Add user message bubble
     function addUserMessage(text) {
         const row = document.createElement('div');
         row.className = 'msg-row user';
@@ -895,7 +920,6 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Show typing indicator
     function showTyping() {
         const row = document.createElement('div');
         row.className = 'msg-row bot';
@@ -920,13 +944,13 @@
         if (el) el.remove();
     }
 
-    // Send message to backend
-    async function sendMessage() {
-        const text = chatInput.value.trim();
+    // ── Send message ──────────────────────────────
+    async function sendMessage(overrideText) {
+        const text = overrideText || chatInput.value.trim();
         if (!text) return;
 
         addUserMessage(text);
-        chatInput.value = '';
+        if (!overrideText) chatInput.value = '';
         showTyping();
 
         try {
@@ -940,7 +964,7 @@
         }
     }
 
-    chatSend.addEventListener('click', sendMessage);
+    chatSend.addEventListener('click', () => sendMessage());
     chatInput.addEventListener('keypress', e => {
         if (e.key === 'Enter') sendMessage();
     });
