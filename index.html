@@ -760,7 +760,7 @@
             <p>📍 Gemullehoekenweg 5, Oisterwijk<br>5061 MA Nederland</p>
             <br>
             <p>📞 <a href="tel:013-5213492">(013) 521 34 92</a></p>
-            <p>📧 <a href="mailto:info@lacucinaoisterwijk.nl">info@lacucinaoisterwijk.nl</a></p>
+            <p>📧 <a href="/cdn-cgi/l/email-protection#cfa6a1a9a08fa3aeacbaaca6a1aea0a6bcbbaabdb8a6a5a4e1a1a3"><span class="__cf_email__" data-cfemail="40292e262f002c21233523292e212f293334253237292a2b6e2e2c">[email&#160;protected]</span></a></p>
         </div>
         <div class="hours-card">
             <h3>Openingstijden</h3>
@@ -824,7 +824,7 @@
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const toggleBtn    = document.getElementById('chat-toggle-btn');
     const chatWindow   = document.getElementById('chat-window');
     const chatMessages = document.getElementById('chat-messages');
@@ -881,9 +881,7 @@
                 return;
             }
 
-            // Send chip topic as user message
-            quickChips.style.display = 'none';
-            inputArea.classList.remove('hidden');
+            // Send chip topic but keep chips visible
             sendMessage(topic);
         });
     });
@@ -960,15 +958,4 @@
             addBotMessage(data.response);
         } catch (err) {
             hideTyping();
-            addBotMessage('Er ging iets mis. Probeer het opnieuw of bel ons op (013) 521 34 92.');
-        }
-    }
-
-    chatSend.addEventListener('click', () => sendMessage());
-    chatInput.addEventListener('keypress', e => {
-        if (e.key === 'Enter') sendMessage();
-    });
-</script>
-
-</body>
-</html>
+            addBotMessage('Er ging iets mis. Probee
